@@ -17,24 +17,20 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  let newArray = [];
-  for (let i = 0; i < 4; i++) {
-    if (i === 2) {
-      newArray[i] = Math.floor(Math.random() * 3);
-    } else if (i === 3) {
-      newArray[i] = Math.floor(Math.random() * 5);
-    } else {
-      newArray[i] = Math.floor(Math.random() * 4);
-    }
-  }
+
+  let whoIndex = Math.floor(Math.random() * who.length);
+  let actionIndex = Math.floor(Math.random() * action.length);
+  let whatIndex = Math.floor(Math.random() * what.length);
+  let whenIndex = Math.floor(Math.random() * when.length);
+
   let frase =
-    who[newArray[0]] +
+    who[whoIndex] +
     " " +
-    action[newArray[1]] +
+    action[actionIndex] +
     " " +
-    what[newArray[2]] +
+    what[whatIndex] +
     " " +
-    when[newArray[3]];
+    when[whenIndex];
 
   document.getElementById("excuse").innerHTML = frase;
 };
